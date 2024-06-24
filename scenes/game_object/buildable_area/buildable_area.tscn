@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6nneunb2v0i8"]
+
+[ext_resource type="Script" path="res://scenes/game_object/buildable_area/buildable_area.gd" id="1_6tw0r"]
+[ext_resource type="Texture2D" uid="uid://c6q8nbux6370m" path="res://icon.svg" id="2_d2aij"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xokn"]
+
+[node name="BuildableArea" type="Area2D"]
+script = ExtResource("1_6tw0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8xokn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.999996, 0.999996)
+scale = Vector2(0.160156, 0.160156)
+texture = ExtResource("2_d2aij")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

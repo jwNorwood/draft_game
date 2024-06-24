@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlp5qllbe2y73"]
+
+[ext_resource type="Script" path="res://scenes/manager/UpgradeManager.gd" id="1_ndtj1"]
+
+[node name="UpgradeManager" type="Node"]
+script = ExtResource("1_ndtj1")

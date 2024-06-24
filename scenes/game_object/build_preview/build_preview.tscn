@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcwe15rai7334"]
+
+[ext_resource type="Texture2D" uid="uid://c6q8nbux6370m" path="res://icon.svg" id="1_ch1k8"]
+[ext_resource type="Script" path="res://scenes/game_object/build_preview/build_preview.gd" id="2_60xdt"]
+
+[node name="BuildPreview" type="Sprite2D"]
+position = Vector2(0, -9.53674e-07)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_ch1k8")
+offset = Vector2(0, -60)
+script = ExtResource("2_60xdt")

@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpmhpqyjoaqra"]
+
+[sub_resource type="GDScript" id="GDScript_cxvsi"]
+script/source = "extends Panel
+
+signal selected(tower)
+
+@onready var cost_label: Label = $%CostLabel
+@onready var name_label: Label = $%NameLabel
+@onready var description_label: Label = $%DescriptionLabel
+@onready var main_container: MarginContainer = $%MainContainer
+
+func _ready():
+	gui_input.connect(on_gui_input)
+
+func on_gui_input(event: InputEvent):
+	if event.is_action_pressed(\"left_click\"):		
+		selected.emit()
+
+func set_option(item):
+	print(item)
+	cost_label.text = str(item.cost)
+	name_label.text = item.name
+	description_label.text = item.description
+
+func _on_mouse_entered():
+	pass # Replace with function body.
+
+func _on_mouse_exited():
+	pass # Replace with function body.
+"
+
+[node name="BuildOption" type="Panel"]
+custom_minimum_size = Vector2(120, 150)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_cxvsi")
+
+[node name="MainContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_right = 68.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="MainContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"
+
+[node name="NameLabel" type="Label" parent="MainContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "test name
+"
+uppercase = true
+
+[node name="DescriptionLabel" type="Label" parent="MainContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "test descriptiongjhg"
+autowrap_mode = 3
+justification_flags = 171
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

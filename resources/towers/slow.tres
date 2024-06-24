@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tower" load_steps=2 format=3 uid="uid://c4judqexn28ut"]
+
+[ext_resource type="Script" path="res://resources/towers/tower.gd" id="1_h178v"]
+
+[resource]
+script = ExtResource("1_h178v")
+id = "tower_slow"
+name = "Slow Tower"
+description = "A slow attacking tower"
+cost = 3

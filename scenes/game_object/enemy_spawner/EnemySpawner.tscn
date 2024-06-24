@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://djhqqnxrc7kib"]
+
+[ext_resource type="Script" path="res://scenes/game_object/enemy_spawner/EnemySpawner.gd" id="1_t7s42"]
+[ext_resource type="Texture2D" uid="uid://c6q8nbux6370m" path="res://icon.svg" id="2_jdbqk"]
+
+[node name="EnemySpawner" type="Node2D"]
+script = ExtResource("1_t7s42")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -2)
+scale = Vector2(0.28125, 0.28125)
+texture = ExtResource("2_jdbqk")

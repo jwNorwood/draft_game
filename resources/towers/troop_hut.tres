@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tower" load_steps=2 format=3 uid="uid://bhrjl3vikbyeq"]
+
+[ext_resource type="Script" path="res://resources/towers/tower.gd" id="1_8dtqb"]
+
+[resource]
+script = ExtResource("1_8dtqb")
+id = "troop_hut"
+name = "Troop Hut"
+description = "Tower that summons a troop periodicly"
+cost = 4

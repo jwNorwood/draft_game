@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ddxr4ox11erqh"]
+
+[node name="BuildSelect" type="CanvasLayer"]
+
+[node name="BuildOptions" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1, 0.988862)
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BuildOptions"]
+layout_mode = 2
+vertical_scroll_mode = 0
+
+[node name="OptionList" type="HBoxContainer" parent="BuildOptions/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8

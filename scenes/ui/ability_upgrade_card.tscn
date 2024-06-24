@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk8gs3xh3fo7d"]
+
+[sub_resource type="GDScript" id="GDScript_cxvsi"]
+script/source = "extends Panel
+# used on
+# reward screen
+# store screen
+
+signal selected(tower)
+
+@onready var cost_label: Label = $%CostLabel
+@onready var name_label: Label = $%NameLabel
+@onready var description_label: Label = $%DescriptionLabel
+
+func _ready():
+	gui_input.connect(on_gui_input)
+	pass
+
+func on_gui_input(event: InputEvent):
+	if event.is_action_pressed(\"left_click\"):
+		selected.emit()
+		print(\"selected inside\")
+
+func set_option(item):
+	print(item)
+	#cost_label.text = str(item.cost)
+	name_label.text = item.name
+	description_label.text = item.description
+"
+
+[node name="AbilityUpgradeCard" type="Panel"]
+custom_minimum_size = Vector2(120, 150)
+script = SubResource("GDScript_cxvsi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "test name
+"
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "test description"
+autowrap_mode = 2

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tower" load_steps=2 format=3 uid="uid://dv43e5je4uvhx"]
+
+[ext_resource type="Script" path="res://resources/towers/tower.gd" id="1_uo7ok"]
+
+[resource]
+script = ExtResource("1_uo7ok")
+id = "aoe_tower"
+name = "AoE Tower"
+description = "An area of effect attacking tower"
+cost = 2

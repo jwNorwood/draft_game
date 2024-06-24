@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tower" load_steps=2 format=3 uid="uid://bc4jiq51tv4yd"]
+
+[ext_resource type="Script" path="res://resources/towers/tower.gd" id="1_xdu01"]
+
+[resource]
+script = ExtResource("1_xdu01")
+id = "troops"
+name = "Troops"
+description = "Summon a few troops"
+cost = 1
